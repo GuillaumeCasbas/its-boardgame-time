@@ -1,5 +1,10 @@
+
 ports:
   - port: 3000
 tasks:
   - init: yarn install
     command: yarn start
+vscode:
+  extensions:
+    - PKief.material-icon-theme
+    - dbaeumer.vscode-eslint
