@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link, Route, Routes } from 'react-router-dom';
 
 function Home() {
@@ -30,9 +31,11 @@ function About() {
 }
 
 function App() {
+  const { t } = useTranslation();
+
   return (
     <div className="App">
-      <h1>It&apos;s board game time !</h1>
+      <h1>{t('It\'s board game time !')}</h1>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
