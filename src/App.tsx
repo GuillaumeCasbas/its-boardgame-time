@@ -2,35 +2,31 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, Route, Routes } from 'react-router-dom';
 
-function Home() {
-  return (
-    <>
-      <main>
-        <h2>🐓 Something great will happen here !</h2>
-        <p>But not in guava !</p>
-      </main>
-      <nav>
-        <Link to="/about">About</Link>
-      </nav>
-    </>
-  );
-}
+const Home = () => (
+  <>
+    <main>
+      <h2>🐓 Something great will happen here !</h2>
+      <p>But not in guava !</p>
+    </main>
+    <nav>
+      <Link to="/about">About</Link>
+    </nav>
+  </>
+);
 
-function About() {
-  return (
-    <>
-      <main>
-        <h2>What about guava ?</h2>
-        <p>Overdose 🤫</p>
-      </main>
-      <nav>
-        <Link to="/">Home</Link>
-      </nav>
-    </>
-  );
-}
+const About = () => (
+  <>
+    <main>
+      <h2>What about guava ?</h2>
+      <p>Overdose 🤫</p>
+    </main>
+    <nav>
+      <Link to="/">Home</Link>
+    </nav>
+  </>
+);
 
-function App() {
+const App = () => {
   const { t } = useTranslation();
 
   return (
@@ -42,6 +38,6 @@ function App() {
       </Routes>
     </div>
   );
-}
+};
 
 export default App;
