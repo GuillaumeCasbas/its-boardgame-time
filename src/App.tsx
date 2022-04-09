@@ -1,12 +1,13 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, Route, Routes } from 'react-router-dom';
+import BoardgamePicker from './boardgame-picker/BoardgamePicker';
+import { BoardgamesProvider } from './hook/use-boardgames';
 
 const Home = () => (
   <>
     <main>
-      <h2>🐓 Something great will happen here !</h2>
-      <p>But not in guava !</p>
+      <BoardgamePicker />
     </main>
     <nav>
       <Link to="/about">About</Link>
@@ -30,13 +31,24 @@ const App = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="App">
-      <h1>{t('It\'s board game time !')}</h1>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="about" element={<About />} />
-      </Routes>
-    </div>
+    <BoardgamesProvider
+      boardgames={[
+        {
+          id: '1', title: 'Villainous', minPlayers: 2, maxPlayers: 5,
+        },
+        {
+          id: '2', title: 'Nemesis', minPlayers: 1, maxPlayers: 6,
+        },
+      ]}
+    >
+      <div className="App">
+        <h1>{t('It\'s board game time !')}</h1>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="about" element={<About />} />
+        </Routes>
+      </div>
+    </BoardgamesProvider>
   );
 };
 

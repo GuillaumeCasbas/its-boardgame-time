@@ -3,12 +3,14 @@ import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import App from './App';
 
+const playerNumberSelect = () => screen.getByLabelText('Number of players');
+
 test('renders learn react link', () => {
   render(
     <MemoryRouter initialEntries={['/']}>
       <App />
     </MemoryRouter>,
   );
-  const text = screen.getByText(/It's board game time !/i);
-  expect(text).toBeInTheDocument();
+
+  expect(playerNumberSelect()).toBeInTheDocument();
 });
