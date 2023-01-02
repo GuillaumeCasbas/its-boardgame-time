@@ -1,6 +1,7 @@
 {
     "translation": {
         "It's board game time !": "It's board game time !!!",
-        "Choose me a boardgame": "Choose me a boardgame"
+        "Choose me a boardgame": "Choose me a boardgame",
+        "The list is empty. Please use the form below to add boardgames": "The list is empty. Please use the form below to add boardgames"
     }
 }
